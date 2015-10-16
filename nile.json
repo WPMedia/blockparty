@@ -9,6 +9,10 @@
             "external": false
         }
     ],
+    "http": {
+	    "timeout": "30s",
+	    "insecure": true
+	},
 	"command": "gunicorn -b :5000 app:app",
 	"builds": [{"notify": "blockparty", "branch": "master", "version": "0.1.0", "tags": ["latest"], "autodeploy": true}],
 	"stages": [
