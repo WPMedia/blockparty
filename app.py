@@ -81,7 +81,10 @@ def upload(id):
 			content = file.read()
 
 			if 'index.html' in filename:
-				title = BeautifulSoup(content).title.string
+				try:
+					title = BeautifulSoup(content).title.string
+				except (AttributeError):
+					pass
 
 		print content
 
@@ -167,8 +170,12 @@ def view_file(id, filename):
 		block['files'][filenames.index(filename)]['id'] = str(oid)
 		update = {'files': block['files']}
 		if 'index.html' in filename:
-			title = BeautifulSoup(content).title.string
-			update['title'] = title
+			try:
+				title = BeautifulSoup(content).title.string
+				update['title'] = title
+			except (AttributeError):
+				pass
+
 		blocks.find_one_and_update({'_id': ObjectId(id)}, {'$set': update}, upsert=True)
 		return redirect(url_for('view_block', id=id), 302)
 
@@ -178,7 +185,6 @@ def download(id):
 	block = blocks.find_one({'_id': ObjectId(id)})
 	files = block['files']
 	zip_contents = ''
-	zipfilename = str(block['_id']) + '.zip'
 	with io.BytesIO() as stream:
 		with zipfile.ZipFile(stream, 'a', zipfile.ZIP_DEFLATED, False) as zip:
 			for file in files:
