@@ -21,7 +21,7 @@ MONGODB_SETTINGS = {
     'password': os.getenv('MONGODB_PASS', 'admin')
 }
 
-client = MongoClient(host=MONGODB_SETTINGS['host'], port=MONGODB_SETTINGS['port'])
+client = MongoClient(host=MONGODB_SETTINGS['host'], port=int(MONGODB_SETTINGS['port']))
 db = client[MONGODB_SETTINGS['db']]
 db.authenticate(
 	MONGODB_SETTINGS['username'],
