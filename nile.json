@@ -9,7 +9,7 @@
             "external": false
         }
     ],
-	"command": "gunicorn -b :5000 --chdir app -w 4 app",
+	"command": "gunicorn -b :5000 app",
 	"builds": [{"notify": "blockparty", "branch": "master", "version": "0.1.0", "tags": ["latest"], "autodeploy": true}],
 	"stages": [
 		{
