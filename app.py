@@ -86,8 +86,6 @@ def upload(id):
 				except (AttributeError):
 					pass
 
-		print content
-
 		programming_languages = defaultdict(str)
 
 		for lang in [('text/css', 'css'), ('text/html', 'html'), ('text/javascript', 'javascript')]:
