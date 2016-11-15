@@ -1,0 +1,849 @@
+/* Main share tools*/
+/* modified from features > sharebars > top-share-bar > styles.css */
+/* Grayscale = default, no class needed */
+/* Colorful = add class color-top to top-sharebar-wrapper */
+/* Reverse = add class reverse to top-sharebar-wrapper */
+
+.pb-f-sharebars-top-share-bar {
+    -border-bottom: none;
+    -padding-right: 50px !important;
+    -border-right: 1px solid #d5d5d5;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+/* START DEFAULT SHARE-BAR DISPLAY */
+
+.padding-top {
+    padding-top: 10px;
+}
+
+.margin-top {
+    margin-top: 10px;
+}
+
+.sticky-top-sharebar {
+	width: 100%;
+  top: 0px;
+  -webkit-transition: -webkit-transform 250ms ease-out;
+  -moz-transition: -moz-transform 250ms ease-out;
+  -o-transition: -o-transform 250ms ease-out;
+  -ms-transition: -ms-transform 250ms ease-out;
+  transition: transform 250ms ease-out;
+}
+
+.social-tools-wrapper {
+    overflow: hidden;
+    display: block;
+    height: 38px;
+}
+
+.social-tools-additional {
+    display: none;
+    overflow: hidden;
+    border: 1px solid #d5d5d5;
+    border-left: none;
+}
+
+.social-tools-readlater {
+    float: right;
+}
+
+.social-tools {
+	display: inherit;
+}
+
+.social-tools .tool {
+    font-size: 1.4em;
+    line-height: 1em;
+    border-left: 1px solid #D5D5D5;
+}
+
+.social-tools-additional .social-tools .tool,
+.social-tools-primary .social-tools .tool {
+	display: none;
+}
+
+.force-visibility .social-tools .tool,
+.social-tools-additional.more-open .social-tools .tool {
+	display: block;
+}
+
+.pb-f-sharebars-top-share-bar.pb-f-theme-dark .top-sharebar-wrapper{
+	border-color: #1b1b1b;
+	background-color: #1f1f1f;
+}
+.pb-f-sharebars-top-share-bar.pb-f-theme-dark,
+.pb-f-sharebars-top-share-bar.pb-f-theme-dark .social-tools-primary,
+.pb-f-sharebars-top-share-bar.pb-f-theme-dar .social-tools-additional {
+    border-color: #1b1b1b !important;
+}
+
+.pb-f-sharebars-top-share-bar.pb-f-theme-dark .social-tools .tool {
+    border-color: #1b1b1b;
+}
+.pb-f-sharebars-top-share-bar.pb-f-theme-dark .social-tools-wrapper .social-tools span.fa:after,
+.pb-f-sharebars-top-share-bar.pb-f-theme-dark .social-tools-wrapper .social-tools span {
+    color: #f0f0f0 !important;
+}
+
+.pb-f-sharebars-top-share-bar.pb-f-theme-dark .social-tools-wrapper .social-tools .tool:hover span {
+    color: #fff !important;
+}
+.social-tools .tool.first {
+    border-left: none;
+}
+
+.tool {
+    cursor: pointer;
+}
+
+.social-tools-wrapper .tool {
+    text-align: center;
+    vertical-align: middle;
+    padding: 9px 20px 8px 20px;
+}
+
+.vertical-top-sharebar .social-tools-wrapper .tool{
+	padding: 9px 15px 8px 15px;
+}
+
+.social-tools-wrapper .social-tools span {
+    color: #5a5a5a;
+}
+
+
+.social-tools .hideText {
+    position: absolute;
+    left: -10000px;
+}
+
+/* END DEFAULT SHARE-BAR DISPLAY */
+
+/* START REVERSE DISPLAY STYLE */
+.top-sharebar-wrapper.reverse {
+	background-color: transparent;
+	
+	.social-tools-wrapper .tool {
+		span {
+			color: #fff;
+		}
+	}
+}
+
+/* END REVERSE DISPLAY STYLE */
+
+/* START COLOR-TOP DISPLAY STYLE */
+
+
+/*Available icons
+comments,email,facebook,google-plus,linkedin,more, pinterest,print,textresizer,tumblr,twitter
+*/
+
+.top-sharebar-wrapper.color-top .social-tools-wrapper,
+.top-sharebar-wrapper.color-top .social-tools-wrapper .social-tools-primary,
+.top-sharebar-wrapper.color-top .social-tools-wrapper .social-tools-additional {
+    border: none;
+}
+
+.top-sharebar-wrapper.color-top .social-tools-wrapper .tool {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: none;
+}
+
+.social-tools .tool:hover span {
+    opacity: 0.80;
+    -moz-opacity: 0.80;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=80);
+    filter: alpha(opacity=80);
+}
+
+.top-sharebar-wrapper.color-top .social-tools-wrapper .tool .fa {
+    min-width: 1.1em;
+}
+	
+.top-sharebar-wrapper.color-top .social-tools-wrapper .tool.email .fa {
+    color: #bd2a32;
+}
+
+.top-sharebar-wrapper.color-top .social-tools-wrapper .tool.sms .fa {
+    color: #0BD318;
+}
+
+.top-sharebar-wrapper.color-top .social-tools-wrapper .tool.facebook .fa {
+    color: #3b5998;
+}
+
+.top-sharebar-wrapper.color-top .social-tools-wrapper .tool.google-plus .fa {
+    color: #dd4b39;
+}
+
+.top-sharebar-wrapper.color-top .social-tools-wrapper .tool.linkedin .fa {
+    color: #007bb6;
+}
+.top-sharebar-wrapper.color-top .social-tools-wrapper .tool.read-later-list .fa,
+.top-sharebar-wrapper.color-top .social-tools-wrapper .tool.read-later-bookmark .fa,
+.top-sharebar-wrapper.color-top .social-tools-wrapper .tool.more .fa {
+    color: #2a2a2a;
+}
+
+.top-sharebar-wrapper.color-top .social-tools-wrapper .tool.read-later-bookmark .fa.fa-bookmark{
+    color: #6CBB4D;
+}
+.top-sharebar-wrapper.color-top .social-tools-wrapper .tool.read-later-list .fa:before,
+.top-sharebar-wrapper.color-top .social-tools-wrapper .tool.read-later-bookmark .fa:before,
+.top-sharebar-wrapper.color-top .social-tools-wrapper .tool.more .fa-plus:before {
+    vertical-align: middle;
+}
+.top-sharebar-wrapper.color-top .social-tools-wrapper .tool.read-later-list .fa:after,
+.top-sharebar-wrapper.color-top .social-tools-wrapper .tool.read-later-bookmark .fa:after,
+.top-sharebar-wrapper.color-top .social-tools-wrapper .tool.more .fa-plus:after {
+    font-family: "FranklinITCProBold", "HelveticaNeue", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 16px;
+    display: inline;
+    vertical-align: middle;
+}
+.top-sharebar-wrapper.color-top .social-tools-wrapper .tool.more .fa-plus:after{
+    content: 'More';
+}
+.top-sharebar-wrapper.color-top .tool.read-later-list .fa:after{
+    content: 'Reading List';
+    padding-left:10px;
+    color: #000;
+}
+.top-sharebar-wrapper.color-top .tool.read-later-bookmark .fa:after{
+    padding-left:10px;
+    color: #000;
+}
+.top-sharebar-wrapper.color-top .tool.read-later-bookmark .fa-bookmark:after{
+    content: 'Saved for Later';
+}
+.top-sharebar-wrapper.color-top .tool.read-later-bookmark .fa-bookmark-o:after{
+    content: 'Save for Later';
+}
+.pb-f-sharebars-top-share-bar.pb-f-theme-dark .top-sharebar-wrapper.color-top .social-tools-wrapper .tool.more .fa {
+    color: #777777;
+}
+
+.top-sharebar-wrapper.color-top .social-tools-wrapper .tool.pinterest .fa {
+    color: #cb2027;
+}
+
+.top-sharebar-wrapper.color-top .social-tools-wrapper .tool.reddit .fa {
+    color: #ff5700;
+}
+
+.top-sharebar-wrapper.color-top .social-tools-wrapper .tool.stumbleupon .fa {
+    color: #EB4823;
+}
+
+.top-sharebar-wrapper.color-top .social-tools-wrapper .tool.tumblr .fa {
+    color: #32506d;
+}
+
+.top-sharebar-wrapper.color-top .social-tools-wrapper .tool.twitter .fa {
+    color: #00aced;
+}
+
+.top-sharebar-wrapper.color-top .social-tools-wrapper .tool.whatsapp .fa {
+    color: #5cbe4a;
+}
+
+.top-sharebar-wrapper.unprocessed .social-tools-wrapper .tool.whatsapp,
+.top-sharebar-wrapper.tablet .social-tools-wrapper .tool.whatsapp {
+    display: none !important;
+}
+
+/* END COLOR-TOP DISPLAY STYLE */
+
+.social-tools .more span.text,
+.social-tools span.text {
+    font-family: "FranklinITCProLight", sans-serif;
+    font-size: 0.785em;
+    line-height: 1em !important;
+}
+
+.echo-counter .mobile-count {
+    display: none;
+}
+
+/* START READ LATER AND READING LIST */
+.social-notification-bar {
+    margin-left: -5px;
+    margin-right: -5px;
+    background-color:#6CBB4D;
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    z-index: -1;
+    -webkit-transition: -webkit-transform 250ms ease-out, opacity 250ms ease-out;
+    -moz-transition: -moz-transform 250ms ease-out, opacity 250ms ease-out;
+    -ms-transition: -ms-transform 250ms ease-out, opacity 250ms ease-out; /* IE10 is actually unprefixed */
+    -o-transition: -o-transform 250ms ease-out, opacity 250ms ease-out;
+    transition: transform 250ms ease-out, opacity 250ms ease-out;
+}
+
+.read-later-ads{
+    float: right
+}
+.social-notification-bar.show {
+    opacity: 1;
+    transform: translateY(6px);
+}
+
+.notification-message {
+    text-align: left;
+    float: left;
+}
+
+.social-notification-bar .social-text,
+.social-notification-bar .fa {
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    padding: 15px 5px 15px 28px;
+    font-size: 16px;
+}
+.social-notification-bar .social-text {
+    padding-left:0;
+}
+
+.sign-in-dialog {
+    display: none;
+    position: absolute;
+    transform: translateY(50%);
+    left: 50%;
+    margin-left: -350px;
+    width: 700px;
+    background-color: #EEE;
+    color: #333;
+    padding: 20px;
+    -webkit-box-shadow: -1px 1px 25px 1px rgba(0,0,0,1);
+    -moz-box-shadow: -1px 1px 25px 1px rgba(0,0,0,1);
+    box-shadow: -1px 1px 25px 1px rgba(0,0,0,1);
+}
+
+.dialog-message-container {
+    border-right: 1px solid #ddd;
+}
+.read-later-dialog-message .read-later-dialog-headline{
+    font-size: 36px;
+    line-height: 40px;
+    font-family: FranklinITCProBold;
+    margin-bottom:0.67em;
+}
+.login-btn-container {
+    padding: 0 15px;
+    text-align: center;
+}
+
+.login-btn-container .top-header-message{
+    padding-bottom: 20px;
+}
+.login-btn-container .dialog-btn {
+    width: 80%;
+    height: 44px;
+    font-size: 16px;
+    border: 1px solid #5a5a5a;
+    display: block;
+    background-color: #2a2a2a;
+    color: #fff;
+    border-radius: 5px;
+    line-height: 44px;
+    text-align: center;
+    margin: auto;
+}
+
+.dialog-btn-container {
+    padding-bottom: 10px;
+}
+.login-btn {
+    background: #000;
+}
+
+.login-btn-container .create-account-btn {
+    background-color: #ddd;
+    color: #000;
+}
+/* END READ LATER AND READING LIST */
+
+/*Follow button and modals styles*/
+#shareBar-follow.hide {
+  display: none;
+}
+.powerpost-shareBar {
+  margin-top: 10px;
+  float: right;
+}
+.powerpost-shareBar .shareBar-label  {
+    font-family: "FranklinITCProBold","HelveticaNeue", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 18px;
+    float: left;
+}
+.powerpost-shareBar .follow  {
+  float: left;
+  margin-left: 20px;
+  position: relative;
+  padding: 4px 14px;
+  font-size: 14px;
+  color: #2E6D9D;
+  cursor: pointer;
+  min-width: 185px;
+  border: 1px solid #2E6D9D;
+  border-radius: 30px;
+  top: -6px;
+  text-align: center;
+  font-family: "FranklinITCProLight","HelveticaNeue","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
+.powerpost-shareBar .follow:before {
+  font-family: "FranklinITCProLight";
+  font-size: 16px;
+  content: "+";
+  margin-right: 0.25em;
+  line-height: 0;
+}
+.powerpost-shareBar .following {
+  background-color: #2E6D9D;
+  color: #fff;
+  border: 1px solid #2E6D9D;
+  text-align: center;
+}
+.powerpost-shareBar .following:before {
+  font-family: FontAwesome;
+  content: "\f00c";
+  margin-right: 0.25em;
+  line-height: 0;
+}
+.powerpost-shareBar a {
+    color: #2a2a2a;
+}
+
+/* ----------- Non-Retina Screens ----------- */
+@media screen
+  and (min-device-width: 1200px)
+  and (max-device-width: 1600px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+  .powerpost-shareBar .following:hover:before  {
+    content: "Unfollow";
+    font-size: 14px;
+    font-family: "FranklinITCProLight","HelveticaNeue","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  }
+  .powerpost-shareBar .following:hover .followLbl,
+  .powerpost-shareBar .following:hover .followTitle {
+      display: none;
+  }
+  .powerpost-shareBar .following:hover {
+    color: #2E6D9D;
+    border: 1px solid #2E6D9D;
+    background: none;
+  }
+}
+/* ----------- Retina Screens ----------- */
+@media screen
+  and (min-device-width: 1200px)
+  and (max-device-width: 1600px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) {
+
+  .powerpost-shareBar .following:hover:before  {
+    content: "Unfollow";
+    font-size: 14px;
+    font-family: "FranklinITCProLight","HelveticaNeue","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  }
+  .powerpost-shareBar .following:hover .followLbl,
+  .powerpost-shareBar .following:hover .followTitle {
+      display: none;
+  }
+  .powerpost-shareBar .following:hover {
+    color: #2E6D9D;
+    border: 1px solid #2E6D9D;
+    background: none;
+  }
+}
+
+
+/* Follow modal popup */
+.shareBar-follow-modal {
+  display: none;
+  position: absolute;
+  min-height: 150px;
+  border-radius: 4px;
+  box-shadow: 0 0 16px 0 rgba(42, 42, 42, 0.5);
+  padding: 1px;
+  width: 364px;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 0 50px #666;
+  padding-bottom: 16px;
+  z-index: 1000 !important;
+}
+.shareBar-follow-modal.fixedModal {
+  position: fixed !important;
+  top: 150px !important;
+}
+.shareBar-follow-modal.fixedModalNav {
+  position: fixed !important;
+  top: 204px !important;
+}
+.shareBar-follow-modal .arrow-down {
+  position: absolute;
+  bottom: -12px;
+  left: 126px;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid #fff;
+  display: none;
+}
+
+.shareBar-follow-modal .follow-modal-icon {
+  text-align: center;
+  font-size: 36px;
+  margin-top: -10px;
+  margin-bottom: 15px;
+}
+
+.shareBar-follow-modal .hide {
+  display: none;
+}
+
+.shareBar-follow-modal .follow-modal-icon i {
+  position: relative;
+}
+
+.shareBar-follow-modal .follow-modal-icon i:after {
+  content: '1';
+  position: absolute;
+  background: #cd0000;
+  right: -17px;
+  top: -5px;
+  height: 24px;
+  width: 30px;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 15px;
+  color: white;
+  font-family: "FranklinITCProLight","HelveticaNeue","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  border: 2px solid white;
+}
+
+.shareBar-follow-modal .follow-modal-title {
+  font-size: 16px;
+  line-height: 18px;
+  font-family: "FranklinITCProBold", "HelveticaNeue", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  margin-bottom: 14px;
+  background-color: #F3F3F3;
+  padding: 10px 16px;
+  letter-spacing: -.01em;
+  text-align: center;
+  color: #2a2a2a;
+  min-height: 50px;
+}
+
+.shareBar-follow-modal .invalid-email {
+  display: none;
+  font-size: 14px;
+  margin: 10px 0px 0 0;
+  float: left;
+  font-family: "FranklinITCProLight";
+  color: #E34336;
+}
+
+.shareBar-follow-modal .follow-modal-close {
+  float: right;
+}
+
+.shareBar-follow-modal .category-desc {
+  font-size: 14px;
+  line-height: 18px;
+  margin: 0px;
+  padding: 0px;
+  color: #2a2a2a;
+    font-family: "FranklinITCProLight","HelveticaNeue","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
+
+.shareBar-follow-modal .follow-modal-body {
+  font-size: 16px;
+  line-height: 22px;
+  font-family: "FranklinITCProLight","HelveticaNeue","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  padding: 0px 16px 10px;
+  color: #2a2a2a;
+  text-align: center;
+}
+
+.shareBar-follow-modal .follow-modal-body .not-signed-In.after {
+  padding-top: 30px;
+}
+
+.shareBar-follow-modal .follow-modal-body .signed-In {
+  padding: 20px 0;
+}
+
+.shareBar-follow-modal .follow-modal-buttons {
+  text-align: center;
+  padding: 0px 16px;
+}
+
+.shareBar-follow-modal .follow-modal-buttons .not-signed-In.after {
+  padding-top: 20px;
+}
+
+.shareBar-follow-modal .follow-modal-confirm {
+  padding: 9px 14px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #97B6CD;
+  cursor: pointer;
+  border: 1px solid #97B6CD;
+  border-radius: 4px;
+  background-color: #2E6D9D;
+  border: 1px solid #2E6D9D;
+  color: #fff;
+}
+
+.shareBar-follow-modal .follow-modal-input {
+  font-size: 16px;
+  line-height: 38px;
+  height: 42px;
+  width: 232px;
+  margin-right: 10px;
+  border-radius: 4px;
+  padding-left: 10px;
+}
+.shareBar-follow-modal .follow-modal-footer {
+  border-top: 1px solid #d5d5d5;
+  margin-top: 36px;
+  padding-top: 12px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* START Vertical Sticky */
+.top-sharebar-wrapper:not(.vertical-sticky-top-sharebar) .utility-tools-wrapper {
+	/* handle old config leftovers */
+	display: none;
+}
+
+.vertical-sticky-top-sharebar {
+	position: fixed;
+	top: 230px;
+	left: -100px;
+    z-index: 50;
+    border: 1px solid #d5d5d5;
+    padding: 0px;
+    
+    -webkit-border-top-right-radius: 3px;
+	-webkit-border-bottom-right-radius: 3px;
+	-moz-border-radius-topright: 3px;
+	-moz-border-radius-bottomright: 3px;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+.vertical-sticky-top-sharebar .social-tools-wrapper {
+	height: auto;
+	padding: 5px 0px;
+}
+.vertical-sticky-top-sharebar .utility-tools-wrapper {
+    background: #f0f0f0;
+    border-top: 1px solid #d5d5d5;
+    padding: 5px 0px;
+}
+.vertical-sticky-top-sharebar .utility-tools-wrapper .tool{
+	color: #000;
+}
+.vertical-sticky-top-sharebar .utility-tools-wrapper .tool,
+.vertical-sticky-top-sharebar .social-tools-wrapper .tool {
+	padding: 16px 16px;
+	border: none;
+}
+.vertical-sticky-top-sharebar .fa {
+	font-size: 18px;
+    vertical-align: middle;
+}
+.vertical-sticky-top-sharebar .comments {
+    padding-bottom: 34px !important;
+}
+.vertical-sticky-top-sharebar .comments .echo_container {
+    display: block;
+    text-align: center;
+    font-family: "FranklinITCProBold",sans-serif;
+    font-size: 13px;
+    position: absolute;
+    width: 100%;
+    margin-top: 5px;
+    left: 0px;
+	padding-top: 0px;
+}
+/* END Vertical Sticky */
+@media only screen and (min-width:0px) {
+	.desktop  .pb-f-sharebars-top-share-bar .social-tools.default-desktop .tool {
+		display: block;
+	} 
+	
+	.mobile .pb-f-sharebars-top-share-bar .social-tools-additional {
+		display: inline;
+	}
+
+	.shareBar-follow-modal {
+		display: none;
+	}
+
+	.horizontal-top-sharebar .social-tools-wrapper .social-tools-primary,
+	.sticky-top-sharebar .social-tools-wrapper .social-tools-primary{
+		
+	}
+    .pb-f-sharebars-top-share-bar .notification-message .social-text-desk,
+	.horizontal-top-sharebar .social-tools-wrapper .social-tools a,
+	.sticky-top-sharebar .social-tools-wrapper .social-tools a {
+		display: inline-block;
+	}
+	.pb-f-ad-leaderboard.full {
+		float: none !important;
+	}
+	.pb-f-ad-leaderboard .leaderboard {
+		border-bottom: none !important;
+	}
+
+    .pb-f-sharebars-top-share-bar{
+    	padding: 0 !important;
+    	float: none !important;
+    }
+    .top-sharebar-wrapper{
+    	// padding:5px;
+    	background-color: #fff;
+    	border-top:1px solid #d5d5d5;
+    }
+	.pb-f-sharebars-top-share-bar .top-sharebar-fixed {
+		border-bottom:1px solid #d5d5d5;
+		position: fixed;
+		left: 0;
+		right:0;
+	    z-index: 5000000;
+	    padding-top: 55px;
+	}
+
+    .pb-f-sharebars-top-share-bar .vertical-sticky-top-sharebar .social-tools-wrapper .tool,
+    .pb-f-sharebars-top-share-bar .vertical-top-sharebar .social-tools-wrapper .tool{
+    	display: block;
+    }
+    .pb-f-sharebars-top-share-bar .notification-message .social-text-mobile{
+        display: none;
+    }
+    .jqmOverlay {
+      background-color: #000;
+    }
+}
+
+@media only screen and (max-width:1440px) {
+	.pb-f-sharebars-top-share-bar .vertical-sticky-top-sharebar .utility-tools-wrapper .tool,
+	.pb-f-sharebars-top-share-bar .vertical-sticky-top-sharebar .social-tools-wrapper .tool {
+		padding: 12px 16px;
+	}
+	.pb-f-sharebars-top-share-bar .vertical-sticky-top-sharebar .comments {
+    padding-bottom: 30px !important;
+	}
+}
+
+/* special width for graphics template */
+/* pb standard is 992px, not 1350px */
+@media only screen and (max-width:1350px) {
+	.pb-f-sharebars-top-share-bar .vertical-sticky-top-sharebar {
+		display: none;
+	}
+}
+
+@media only screen and (max-width:768px) {
+
+  .pb-f-sharebars-top-share-bar .follow {
+    display: none !important;
+  }
+}
+
+/*Special width size for read later text show or hide only*/
+@media only screen and (max-width:705px) {
+    .pb-f-sharebars-top-share-bar .top-sharebar-wrapper .social-tools-wrapper .read-later-list .fa:after,
+    .pb-f-sharebars-top-share-bar .top-sharebar-wrapper .social-tools-wrapper .read-later-bookmark .fa:after{
+            content: none !important;
+            padding-left: 0 !important;
+    }
+}
+@media only screen and (max-width:480px) {
+    .pb-f-sharebars-top-share-bar .top-sharebar-wrapper {
+    	text-align: center;
+    }
+    .pb-f-sharebars-top-share-bar .sign-in-dialog{
+      transform: translateY(20px);
+    }
+    .pb-f-sharebars-top-share-bar .sign-in-dialog h1 {
+        font-size: 20px;
+        line-height: 22px;
+    }
+    .pb-f-sharebars-top-share-bar .sign-in-dialog p {
+        font-size: 14px;
+        line-height: 16px;
+    }
+    .pb-f-sharebars-top-share-bar .top-sharebar-wrapper.expanded .social-tools-wrapper {
+        display: block;
+    }
+    .pb-f-sharebars-top-share-bar .notification-message .social-text-mobile,
+    .pb-f-sharebars-top-share-bar .social-tools-additional,
+    .pb-f-sharebars-top-share-bar .social-tools-readlater,
+    .pb-f-sharebars-top-share-bar.echo-counter .mobile-count {
+        display: inline;
+    }
+
+    .pb-f-sharebars-top-share-bar .social-tools-readlater {
+        float: none;
+    }
+
+   .pb-f-sharebars-top-share-bar .social-tools-wrapper .tool {
+        padding: 9px 16px !important;
+    }
+   .pb-f-sharebars-top-share-bar .social-tools-wrapper .tool.sms {
+   		/*icon is bigger than usual*/
+        padding: 9px 15px !important;
+    }
+
+    .pb-f-sharebars-top-share-bar .sign-in-dialog {
+        margin-left: -150px;
+        width: 300px;
+    }
+
+    .pb-f-sharebars-top-share-bar .sign-in-dialog .dialog-btn-container{
+        padding-bottom: 5px;
+    }
+    .pb-f-sharebars-top-share-bar .sign-in-dialog .login-btn-container .dialog-btn{
+        height: 34px;
+        font-size: 14px;
+        line-height: 34px;
+    }
+    .pb-f-sharebars-top-share-bar .sign-in-dialog .login-btn-container .top-header-message {
+        padding-bottom: 0;
+    }
+
+}
+
+@media print {
+    /* TODO: Figure this out */
+    .pb-f-article-article-topper .social-tools-wrapper,
+    .pb-f-article-article-topper #slug_tiffany_tile {
+        display: none;
+    }
+    .pb-f-sharebars-top-share-bar {
+        display: none;
+    }
+}

@@ -1,0 +1,5 @@
+<div class="graphic graphic-ai2html {% if block.graphic_text_shadow === "true" %} white-text-shadow {% endif %} {% if block.wide === "true" %} wide {% endif %}">
+    {% set graphic_html = "../../ai2html-output/" + docId + "/" + block.filename + ".html" %}
+
+    {% include graphic_html ignore missing %}
+</div>

@@ -1,0 +1,21 @@
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+#drop {
+  z-index: 100;
+  width: 100vw;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #1955a5;
+}
+
+iframe {
+  width: 100vw;
+  height: calc(100vh - 50px);
+  position: relative;
+  top: 50px;
+}

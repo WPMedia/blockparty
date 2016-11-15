@@ -1,0 +1,96 @@
+.editors-module {
+
+    padding: 20px 0;
+
+    p.label-kicker {
+        font-size: 1.15em;
+        font-family: $franklin-bold;
+        font-weight: normal;
+
+        &::before {
+            width: 2rem;
+            background-color: #2A2A2A;
+            content: "";
+            display: block;
+            height: 0.25rem;
+            margin-bottom: 0.625rem;
+        }
+    }
+
+    &-unit {
+
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding: 18px 0;
+        border-bottom: 1px solid $ui-lightGray-0;
+
+        &:first-of-type {
+            padding-top: 0px;
+        }
+
+        &-image {
+            padding: 0px;
+        }
+
+        &-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        &-text {
+
+            padding-left: 0px;
+
+            & h5 {
+                font-family: $postoni-standard-bold;
+                font-weight: normal;
+                font-size: 1.85em;
+                line-height: 1.1em;
+                margin-top: 0px;
+                margin-bottom: 10px;
+
+                @media (max-width: $small){
+                    font-size: 1.7em;
+                }
+
+                & a {
+                    color: $ui-black-1;
+
+                    &:hover {
+                        color: $linkBlue;
+                        text-decoration: none;
+                    }
+                }
+            }
+
+            & p {
+                font-size: 1.1em;
+            }
+        }
+
+    }
+
+    .pgArticle--wAD & {
+
+        @media (max-width: $small){
+            .editors-module {
+                &-unit {
+                    &-image {
+                        padding: 0;
+                    }
+                }
+            }
+        }
+
+        @media (max-width: $xsmall){
+            .editors-module {
+                &-unit {
+                    &-text {
+                        padding-left: 0;
+                    }
+                }
+            }
+        }
+    }
+
+}

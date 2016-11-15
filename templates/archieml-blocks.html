@@ -1,0 +1,23 @@
+{% for block in text.blocks %}
+    <div class="block" data-block-type="{{ block.block }}">
+        {% set block_html = "blocks/" + block.block + ".html" %}
+        {% include block_html %}
+    </div>
+{% endfor %}
+
+{% if text.source or text.note %}
+    <div class="pgChart pgBorder-bottom">
+        <footer class="pgChart-footer">
+            {% if text.source %}
+                <p class="pgChart-footer-source">
+                    {{ text.source|safe}}
+                </p>
+            {% endif %}
+            {% if text.note %}
+                <p class="pgChart-footer-source">
+                    {{ text.note|safe }}
+                </p>
+            {% endif %}
+        </footer>
+    </div>
+{% endif %}

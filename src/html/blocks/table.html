@@ -1,0 +1,28 @@
+<div class='skinny'>
+  <table class='pg-table table'>
+    <thead>
+      <tr>
+        <th>Date posted</th>
+        <th>Trump margin</th>
+        <th>Pollster</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    {% for graphic in graphics.Sheet1 %}
+      {% if graphic.official == "TRUE" %}
+      <tr>
+        <td>{{ graphic.ap_date }}</td>
+        <td>+{{ graphic.margin }}</td>
+        {#<td><a href="{{ graphic.poll_url }}">{{ graphic.source }}</a></td>#}
+        <td>{{ graphic.source }}</td>
+        <td>{{ graphic.ap_state }}</td>
+        <td>{% if graphic.url %}<a href="{{ graphic.url }}"><i class="fa fa-external-link"></i></a>{% endif %}</td>
+      </tr>
+      {% endif %}
+    {% endfor %}
+  </table>
+  <div class="note">
+    *This appears to be the partial results of a non-scientific <a href="http://www.nbcnews.com/storyline/commander-in-chief-forum">Twitter poll</a>. The Trump campaign did not respond to a request for clarification about the source of this poll.
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<div class="skinny">
+    <p class="body">
+        {% filter replace('\n\n', '</p><p class="body">', 'g') %}
+            {{ block.text|safe }}
+        {% endfilter %}
+    </p>
+</div>

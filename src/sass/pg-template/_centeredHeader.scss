@@ -1,0 +1,21 @@
+// CENTER HEADER OVERRIDES
+.pgGraphicHeader {
+	text-align: center;
+	overflow: initial;
+	padding: 0;
+}
+
+.pgByline, .pgByline-author-wrap {
+	float: none;
+}
+
+.pgPublishedDate {
+	margin-right: 0;
+}
+
+.pgByline {
+	margin: 20px auto;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #eee;
+}
+// END CENTER HEADER OVERRIDES

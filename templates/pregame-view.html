@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<head>
+	<title>block. party.</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='pregame-style.css') }}">
+</head>
+<body>
+  <div id="drop" class="dropzone"></div>
+  <iframe id="renderframe" src="../render/" frameborder="0"></iframe>
+	<script src="{{ url_for('static', filename='pregame-drag.js') }}"></script>
+</body>

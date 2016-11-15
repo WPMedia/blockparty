@@ -1,0 +1,162 @@
+@mixin text-shadow($color) {
+    text-shadow:1px 1px 0px $color,
+                -1px -1px 0px $color,
+                -1px 1px 0px $color,
+                1px -1px 0px $color
+
+    ;
+}
+
+.white-text-shadow {
+    @include text-shadow(rgba(255,255,255,0.7));
+}
+
+.graphic-ai2html{
+    overflow: hidden
+}
+
+.pgArticle {
+    h2,
+    h3 {
+        font-family: $franklin-bold;
+        margin: 0.1em 0 0.4em;
+        line-height: 1.5em;
+    }
+
+    h2 {
+        font-size: 2.0em;
+    }
+
+    h3 {
+        font-size: 1.6em;
+    }
+
+    .pgChart {
+        margin: 0;
+    }
+}
+
+.related {
+    font-style: italic;
+}
+
+.related.indented {
+	margin-left: 40px;
+}
+
+.section {
+    padding: 0 0 20px;
+}
+
+.skinny {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+h3 {
+    padding-top: 40px;
+}
+
+p.body {
+    font-family: Georgia, serif;
+    font-size: 1.4em;
+    line-height: 1.7em;
+    margin-bottom:20px;
+}
+
+.clear {
+    clear: both;
+}
+
+.graphic {
+    padding: 20px 0 10px 0;
+}
+.graphic-image img {
+    display: block;
+    margin: 0 auto;
+    max-width: 600px;
+    width: 100%;
+}
+
+.graphic-image-center {
+   max-width: 250px;
+   margin: 0 auto;
+
+   img {
+     width: 100%;
+   }
+}
+
+.graphic-image-half {
+    width: 49%;
+
+    &.left {
+        float: left
+    }
+
+    &.right {
+        float: right
+    }
+
+    img {
+        width: 100%;
+    }
+
+    @media (max-width: $xsmall) {
+        width: 100%;
+        &.left, &.right {
+            float: none;
+        }
+
+        &.right {
+            padding: 10px 0;
+        }
+    }
+}
+
+.graphic-caption {
+    color: $gray-1;
+    max-width: 600px;
+    margin: 0 auto;
+
+    .graphic & {
+        width: 100%;
+        max-width: 600px;
+        margin: 20px auto 0 auto;
+    }
+}
+
+.pgChart-footer-source {
+    width: 100%;
+    float: none;
+}
+
+.pgChart ul li {
+	margin: 10px 0;
+	font-size: 18px;
+	line-height: 26px;
+	font-family: georgia;
+}
+
+
+@media(max-width: $med) {
+    .pgArticle {
+        font-size: 13px;
+    }
+    .pgChart-footer-source {
+        font-size: 1.1em;
+    }
+    h3 {
+        padding-top: 30px;
+    }
+}
+
+@media(max-width: $small) {
+    .pgArticle {
+        font-size: 12px;
+    }
+    h3 {
+        padding-top: 20px;
+    }
+}

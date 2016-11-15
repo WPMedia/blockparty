@@ -1,0 +1,13 @@
+<div id="topper">
+  {% for graphic in graphics.Sheet1 %}
+    {% if graphic.filename %}
+    {% if graphic.official == "TRUE" %}
+    <div class="graphic">
+      <a target="_blank" href="{{ graphic.url }}">
+        <img src="img/charts/{{ graphic.filename }}" alt="">
+      </a>
+    </div>
+    {% endif %}
+    {% endif %}
+  {% endfor %}
+</div>

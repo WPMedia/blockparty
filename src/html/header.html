@@ -1,0 +1,44 @@
+<header class="pgGraphicHeader col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+        <a class="pgHeadline-kicker" href="{{ text.section_url }}">
+
+                {{ text.section }}
+
+        </a>
+
+
+    <h1 class="pgH1 skinny pgHeadline--wKicker postoni-standard-bold">
+
+            {{ text.headline }}
+
+    </h1>
+
+    {% include "topper.html" %}
+
+    <p class="pgLead">
+
+            {{ text.intro }}
+
+    </p>
+
+
+        <div class="pgByline">
+            <span class="pgByline-author-wrap">
+            By <a class="pgByline-author" href="https://www.washingtonpost.com/people/john-muyskens/">John Muyskens</a>
+            </span>
+
+            <!-- ADD YOUR OWN TWITTER URL OR POSTGRAPHICS URL -->
+            <!--<span class="pgByline-twitter">
+                <a href="https://twitter.com/postgraphics" class="twitter-follow-button pgByline-twitter-button" data-show-count="false" data-lang="en">
+                   Follow @postgraphics
+                </a>
+            </span>-->
+
+            <div class="pgPublishedDate">
+                Oct. 21, 2016
+            </div>
+        </div>
+
+
+    {% include 'social-share.html' %}
+</header>
