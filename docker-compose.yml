@@ -4,4 +4,4 @@ services:
     build: .
     image: quay.io/washpost/blockparty:{{ .DeploymentId }}
     ports:
-    - "8115:8000"
+      - "8115:8000"
