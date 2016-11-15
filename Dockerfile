@@ -16,4 +16,4 @@ COPY . /code/
 RUN pip install -r requirements.txt
 
 # this might go here?
-CMD ["gunicorn", "-b", ":8000", "app:app", "--log-level=debug"]
+CMD ["gunicorn", "--bind=:8000", "--log-level=debug", "--timeout=120", "--workers=4", "app:app"]
