@@ -1,0 +1,58 @@
+name: blockparty
+namespace: siteeng-lincoln
+environments:
+- name: staging
+  type: ecs
+  override:
+    services:
+      ports:
+      - "5000:5000"
+      app:
+        log_driver: awslogs
+        # TODO: add log group
+        log_opt: 
+          awslogs-group: /nile/siteeng-lincoln/blockparty/staging
+          awslogs-region: us-east-1
+        environment:
+          MONGODB_DB: "blockparty"
+          MONGODB_HOST: "10.128.128.31"
+          MONGODB_PORT: 27017
+          MONGODB_USER: "blockparty_admin"
+          MONGODB_PASS: "%{CiDuTbqBKMSaxsMVeTrx1tUJGDJCCh2vs732XpLoS4LJDRKVAQEBAgB47k26gSjEmsbDFXk68dbVCRgyQgodr7O99l6S6EuCyQ0AAABsMGoGCSqGSIb3DQEHBqBdMFsCAQAwVgYJKoZIhvcNAQcBMB4GCWCGSAFlAwQBLjARBAwmAyZswC0lnEK1ZGUCARCAKeHR3Lvd6ezhjYGjjdeLd1h6vWPpuTrQn3ky9aPerQ2qsX7zCNUe7r93}"
+  services:
+  - deploymentConfiguration:
+      maximumPercent: 200
+      minimumHealthyPercent: 50
+    desiredCount: 1
+    loadBalancers:
+    - containerName: app
+      containerPort: 8000
+      loadBalancerName:
+    serviceName: main
+# - name: prod
+#   type: ecs
+#   override:
+#     services:
+#       app:
+#         ports:
+#           - "5000:5000"
+#         log_driver: awslogs
+#         log_opt:
+#           awslogs-group: /nile/siteeng-lincoln/blockparty/prod
+#           awslogs-region: us-east-1
+#         environment:
+#           MONGODB_DB: "blockparty"
+#           MONGODB_HOST: "10.128.128.31"
+#           MONGODB_PORT: 27017
+#           MONGODB_USER: "blockparty_admin"
+#           MONGODB_PASS: "%{CiDuTbqBKMSaxsMVeTrx1tUJGDJCCh2vs732XpLoS4LJDRKVAQEBAgB47k26gSjEmsbDFXk68dbVCRgyQgodr7O99l6S6EuCyQ0AAABsMGoGCSqGSIb3DQEHBqBdMFsCAQAwVgYJKoZIhvcNAQcBMB4GCWCGSAFlAwQBLjARBAwmAyZswC0lnEK1ZGUCARCAKeHR3Lvd6ezhjYGjjdeLd1h6vWPpuTrQn3ky9aPerQ2qsX7zCNUe7r93}"
+#   services:
+#   - deploymentConfiguration:
+#       maximumPercent: 200
+#       minimumHealthyPercent: 50
+#     desiredCount: 1
+#     loadBalancers:
+#     - containerName: app
+#       containerPort: 8000
+#       loadBalancerName:
+#     serviceName: main

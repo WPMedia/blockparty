@@ -1,0 +1,7 @@
+version: '2'
+services:
+  app:
+    build: .
+    image: quay.io/washpost/blockparty:latest
+    ports:
+    - "5000:5000"

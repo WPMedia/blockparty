@@ -1,33 +1,34 @@
 {
-	"name": "blockparty",
-	"cluster": "alpine.nile.works",
-	"image": "quay.io/washpost/blockparty",
-	"port": 5000,
-    "routes": [
-        {
-        	"protocol": "http",
-            "paths": ["/"],
-            "external": false
-        }
-    ],
+    "name": "blockparty",
+    "cluster": "alpine.nile.works",
+    "image": "quay.io/washpost/blockparty",
+    "port": 5000,
+    "routes": [{
+        "protocol": "http",
+        "paths": ["/"],
+        "external": false
+    }],
     "http": {
-	    "timeout": "30s",
-	    "insecure": true
-	},
-	"command": "gunicorn -b :5000 app:app",
-	"builds": [{"notify": "blockparty", "branch": "master", "version": "0.1.0", "tags": ["latest"], "autodeploy": true}],
-	"stages": [
-		{
-			"name": "dev",
-			"scale": 1,
-			"domain": "blockparty.wpit.nile.works",
-			"environment": {
-				"MONGODB_DB": "blockparty",
-				"MONGODB_HOST": "10.128.128.31",
-				"MONGODB_PORT": 27017,
-				"MONGODB_USER": "blockparty_admin",
-				"MONGODB_PASS": "%{CiDuTbqBKMSaxsMVeTrx1tUJGDJCCh2vs732XpLoS4LJDRKVAQEBAgB47k26gSjEmsbDFXk68dbVCRgyQgodr7O99l6S6EuCyQ0AAABsMGoGCSqGSIb3DQEHBqBdMFsCAQAwVgYJKoZIhvcNAQcBMB4GCWCGSAFlAwQBLjARBAwmAyZswC0lnEK1ZGUCARCAKeHR3Lvd6ezhjYGjjdeLd1h6vWPpuTrQn3ky9aPerQ2qsX7zCNUe7r93}"
-			}
-		}
-	]
+        "timeout": "30s",
+        "insecure": true
+    },
+    "builds": [{
+        "notify": "blockparty",
+        "branch": "master",
+        "version": "0.1.0",
+        "tags": ["latest"],
+        "autodeploy": true
+    }],
+    "stages": [{
+        "name": "dev",
+        "scale": 1,
+        "domain": "blockparty.wpit.nile.works",
+        "environment": {
+            "MONGODB_DB": "blockparty",
+            "MONGODB_HOST": "10.128.128.31",
+            "MONGODB_PORT": 27017,
+            "MONGODB_USER": "blockparty_admin",
+            "MONGODB_PASS": "%{CiDuTbqBKMSaxsMVeTrx1tUJGDJCCh2vs732XpLoS4LJDRKVAQEBAgB47k26gSjEmsbDFXk68dbVCRgyQgodr7O99l6S6EuCyQ0AAABsMGoGCSqGSIb3DQEHBqBdMFsCAQAwVgYJKoZIhvcNAQcBMB4GCWCGSAFlAwQBLjARBAwmAyZswC0lnEK1ZGUCARCAKeHR3Lvd6ezhjYGjjdeLd1h6vWPpuTrQn3ky9aPerQ2qsX7zCNUe7r93}"
+        }
+    }]
 }
