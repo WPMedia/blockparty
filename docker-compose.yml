@@ -2,6 +2,6 @@ version: '2'
 services:
   app:
     build: .
-    image: quay.io/washpost/blockparty:{{ .DeploymentId }}
+    image: quay.io/washpost/blockparty:latest
     ports:
       - "8115:8000"
