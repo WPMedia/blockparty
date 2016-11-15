@@ -3,6 +3,7 @@
     "cluster": "alpine.nile.works",
     "image": "quay.io/washpost/blockparty",
     "port": 5000,
+    "log_driver": "awslogs",
     "routes": [{
         "protocol": "http",
         "paths": ["/"],

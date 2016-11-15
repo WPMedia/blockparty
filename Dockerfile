@@ -16,4 +16,4 @@ COPY . /code/
 RUN pip install -r requirements.txt
 
 # this might go here?
-CMD ["gunicorn", "-b", ":5000", "app:app"]
+CMD ["gunicorn", "-b", ":8000", "app:app"]
