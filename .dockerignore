@@ -1,0 +1,8 @@
+.gitignore
+.git/
+README.md
+
+# maybe remove these?
+nile.json
+nile.yml
+docker-compose.yml
