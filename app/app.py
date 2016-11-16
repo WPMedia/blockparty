@@ -42,16 +42,16 @@ MONGODB_SETTINGS = {
     'db': os.getenv('MONGODB_DB', 'blockparty_dev'),
     'host': os.getenv('MONGODB_HOST', 'localhost'),
     'port': os.getenv('MONGODB_PORT', 27017),
-    'username': os.getenv('MONGODB_USER', 'blockparty_admin'),
-    'password': os.getenv('MONGODB_PASS', 'admin')
+    'username': os.getenv('MONGODB_USER', ''),
+    'password': os.getenv('MONGODB_PASS', '')
 }
 
 client = MongoClient(host=MONGODB_SETTINGS['host'], port=int(MONGODB_SETTINGS['port']))
 db = client[MONGODB_SETTINGS['db']]
 
-db.authenticate(
-	MONGODB_SETTINGS['username'],
-	MONGODB_SETTINGS['password'])
+# db.authenticate(
+# 	MONGODB_SETTINGS['username'],
+# 	MONGODB_SETTINGS['password'])
 
 fs = GridFS(db)
 
@@ -261,7 +261,6 @@ def download(id):
 	response = make_response(zip_contents)
 	response.mimetype = 'application/zip'
 	return response
-
 
 if __name__ == "__main__":
 	app.run(debug=True)
