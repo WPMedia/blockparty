@@ -3,11 +3,21 @@ namespace: siteeng-lincoln
 environments:
 - name: staging
   type: ecs
+  services:
+    - deploymentConfiguration:
+        maximumPercent: 200
+        minimumHealthyPercent: 50
+      desiredCount: 1
+      loadBalancers:
+      - containerName: app
+        containerPort: 8000
+        loadBalancerName: se-gfx-blockparty-staging
+      serviceName: main
   override:
     services:
-      ports:
-      - "8115:8000"
       app:
+        ports:
+          - "8115:8000"
         log_driver: awslogs
         log_opt:
           awslogs-group: /nile/siteeng-lincoln/blockparty/staging
@@ -17,17 +27,7 @@ environments:
           MONGODB_HOST: "10.128.128.31"
           MONGODB_PORT: 27017
           MONGODB_USER: "blockparty_admin"
-          MONGODB_PASS: "%{CiDuTbqBKMSaxsMVeTrx1tUJGDJCCh2vs732XpLoS4LJDRKVAQEBAgB47k26gSjEmsbDFXk68dbVCRgyQgodr7O99l6S6EuCyQ0AAABsMGoGCSqGSIb3DQEHBqBdMFsCAQAwVgYJKoZIhvcNAQcBMB4GCWCGSAFlAwQBLjARBAwmAyZswC0lnEK1ZGUCARCAKeHR3Lvd6ezhjYGjjdeLd1h6vWPpuTrQn3ky9aPerQ2qsX7zCNUe7r93}"
-  services:
-  - deploymentConfiguration:
-      maximumPercent: 200
-      minimumHealthyPercent: 50
-    desiredCount: 1
-    loadBalancers:
-    - containerName: app
-      containerPort: 8000
-      loadBalancerName: se-gfx-blockparty-staging
-    serviceName: main
+          MONGODB_PASS: "%{AQECAHhrXauv6cY0k3VFGkUx9UFWdvCyX3a6yFOMm4QCi5o1gwAAAGwwagYJKoZIhvcNAQcGoF0wWwIBADBWBgkqhkiG9w0BBwEwHgYJYIZIAWUDBAEuMBEEDOm9bs9kru3U5O+O+QIBEIApu5B8ba8L2KOQGt43v50fLKGYZHCQb9VeoqCRNQqBz6OC6STQFuOkfnE=}"
 # - name: prod
 #   type: ecs
 #   override:
