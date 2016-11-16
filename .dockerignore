@@ -1,6 +1,7 @@
 .gitignore
 .git/
 README.md
+.DS_Store
 
 # maybe remove these?
 nile.json

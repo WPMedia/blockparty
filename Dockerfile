@@ -1,19 +1,21 @@
 # alpine is smaller! ~5m vs 200+
-FROM python:2.7-alpine
+FROM python:2.7
 
 LABEL author="John Muyskens"
 LABEL email="john.muyskens@washpost.com"
 
 ENV PYTHONBUFFERED 1
 
-RUN mkdir /code
-
-WORKDIR /code
+RUN mkdir /app
 
 # make sure we're excluding using dockerignore
-COPY . /code/
+COPY ./app /app/
+
+WORKDIR /app
 
 RUN pip install -r requirements.txt
 
+EXPOSE 5000
+
 # this might go here?
-CMD ["gunicorn", "-b", ":8000", "app:app"]
+CMD ["python", "app.py"]
