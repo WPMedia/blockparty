@@ -1,5 +1,5 @@
 # alpine is smaller! ~5m vs 200+
-FROM python:2.7
+FROM python:2.7-alpine
 
 LABEL author="John Muyskens"
 LABEL email="john.muyskens@washpost.com"
