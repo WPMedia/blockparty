@@ -16,4 +16,4 @@ RUN pip install -r /blockparty/requirements.txt
 EXPOSE 8000
 
 # this might go here?
-CMD ["gunicorn", "--bind=:8000", "--workers=4", "blockparty.app:app"]
+CMD ["gunicorn", "--workers=4", "blockparty.app:app"]
