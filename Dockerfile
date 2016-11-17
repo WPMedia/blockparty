@@ -13,7 +13,7 @@ COPY ./blockparty /blockparty/
 
 RUN pip install -r /blockparty/requirements.txt
 
-EXPOSE 5000
+EXPOSE 8000
 
 # this might go here?
-CMD ["gunicorn", "--bind=:5000", "--workers=4", "blockparty.app:app"]
+CMD ["gunicorn", "--bind=:8000", "--workers=4", "blockparty.app:app"]
