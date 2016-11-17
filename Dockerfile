@@ -6,16 +6,14 @@ LABEL email="john.muyskens@washpost.com"
 
 ENV PYTHONBUFFERED 1
 
-RUN mkdir /app
+RUN mkdir /blockparty
 
 # make sure we're excluding using dockerignore
-COPY ./app /app/
+COPY ./blockparty /blockparty/
 
-WORKDIR /app
-
-RUN pip install -r requirements.txt
+RUN pip install -r /blockparty/requirements.txt
 
 EXPOSE 5000
 
 # this might go here?
-CMD ["python", "app.py"]
+CMD ["gunicorn", "--bind=:5000", "--workers=4", "blockparty.app:app"]
