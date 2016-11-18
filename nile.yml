@@ -15,7 +15,7 @@ environments:
       serviceName: main
   override:
     services:
-      blockparty:
+      app:
         ports:
           - "8115:8000"
         log_driver: awslogs
