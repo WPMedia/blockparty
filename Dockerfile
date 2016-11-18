@@ -6,17 +6,13 @@ LABEL email="john.muyskens@washpost.com"
 
 ENV PYTHONBUFFERED 1
 
-# install build dependencies
-# See: https://semaphoreci.com/community/tutorials/dockerizing-a-node-js-web-application
-RUN apt-get update
-RUN apt-get install -y -q --no-install-recommends \
+RUN apt-get update && apt-get install -y -q --no-install-recommends \
     make \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get -y autoclean
 
 RUN mkdir /blockparty
 
-# make sure we're excluding using dockerignore
 COPY ./blockparty /blockparty/
 
 RUN pip install -r /blockparty/requirements.txt
