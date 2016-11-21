@@ -11,13 +11,13 @@ RUN apt-get update && apt-get install -y -q --no-install-recommends \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get -y autoclean
 
-RUN mkdir /app
+RUN mkdir /blockparty
 
-COPY ./app /app/
+COPY ./blockparty /blockparty/
 
-RUN pip install -r /app/requirements.txt
+RUN pip install -r /blockparty/requirements.txt
 
-WORKDIR /app
+WORKDIR /blockparty
 
 EXPOSE 8000
 
