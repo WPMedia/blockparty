@@ -3,4 +3,4 @@
 all: startup
 
 startup:
-	python app.py
+	gunicorn -b :8000 -w 4 app:app
