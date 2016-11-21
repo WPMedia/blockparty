@@ -6,10 +6,7 @@ LABEL email="john.muyskens@washpost.com"
 
 ENV PYTHONBUFFERED 1
 
-RUN apt-get update && apt-get install -y -q --no-install-recommends \
-    make \
-    && rm -rf /var/lib/apt/lists/* \
-    && apt-get -y autoclean
+RUN apk add --no-cache make
 
 RUN mkdir /app
 
