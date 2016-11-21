@@ -3,4 +3,4 @@
 all: startup
 
 startup:
-    python app.py
+	python app.py
